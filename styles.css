@@ -11,6 +11,7 @@
   --color-card: #fbfff8;
   --color-field: #ffffff;
   --shadow-soft: 0 20px 50px rgba(48, 68, 55, 0.13);
+  --shadow-card: 0 24px 60px rgba(48, 68, 55, 0.18);
   --radius: 8px;
   --max-width: 1160px;
   --font-primary: "Fraunces", Georgia, serif;
@@ -278,12 +279,10 @@ h3 {
   filter: drop-shadow(0 22px 36px rgba(48, 68, 55, 0.16));
 }
 
-.intro,
 .about,
 .approach,
 .book-section,
 .trust-hero,
-.trust-story,
 .trust-boundaries {
   display: grid;
   grid-template-columns: 0.95fr 1.05fr;
@@ -291,11 +290,6 @@ h3 {
   align-items: start;
 }
 
-.intro-panel {
-  padding-top: 8px;
-}
-
-.intro-copy,
 .about p,
 .approach p,
 .book-copy p {
@@ -318,7 +312,7 @@ h3 {
 
 .concern-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
 }
 
@@ -338,7 +332,7 @@ h3 {
 }
 
 .concern-card {
-  min-height: 250px;
+  min-height: 220px;
   padding: 24px;
 }
 
@@ -352,16 +346,18 @@ h3 {
   font-size: 1.38rem;
 }
 
-.icon {
-  display: grid;
-  width: 42px;
-  height: 42px;
-  margin-bottom: 18px;
-  place-items: center;
-  color: var(--color-sage-dark);
-  background: #eff7ee;
-  border-radius: 50%;
-  font-size: 1.35rem;
+.concern-label {
+  margin-bottom: 12px;
+  color: var(--color-rose) !important;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.concern-note {
+  max-width: 720px;
+  margin: 24px 0 0;
+  color: var(--color-muted);
 }
 
 .steps {
@@ -373,7 +369,7 @@ h3 {
 }
 
 .about {
-  align-items: center;
+  align-items: start;
 }
 
 .about-portrait {
@@ -430,8 +426,9 @@ h3 {
 }
 
 .certificate-gallery {
-  margin-top: 36px;
-  padding-top: 28px;
+  grid-column: 1 / -1;
+  margin-top: 14px;
+  padding-top: 32px;
   border-top: 1px solid var(--color-line);
 }
 
@@ -449,7 +446,7 @@ h3 {
 
 .certificate-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
 }
 
@@ -487,8 +484,14 @@ h3 {
   transform: translateY(-2px);
 }
 
-.questions {
-  background: #eaf4e8;
+.guidance {
+  display: grid;
+  gap: 64px;
+}
+
+.guidance .questions {
+  padding-top: 54px;
+  border-top: 1px solid var(--color-line);
 }
 
 .question-list {
@@ -556,7 +559,6 @@ h3 {
 }
 
 .trust-profile-card p,
-.story-copy p,
 .trust-boundaries p,
 .note-panel p {
   color: var(--color-muted);
@@ -681,6 +683,12 @@ textarea {
   border: 1px solid var(--color-line);
   border-radius: var(--radius);
   font: inherit;
+  font-weight: 400;
+}
+
+input::placeholder,
+textarea::placeholder {
+  font-weight: 400;
 }
 
 textarea {
@@ -773,12 +781,10 @@ a:focus-visible {
   }
 
   .hero,
-  .intro,
   .about,
   .approach,
   .book-section,
   .trust-hero,
-  .trust-story,
   .trust-boundaries {
     grid-template-columns: 1fr;
   }
@@ -801,6 +807,10 @@ a:focus-visible {
   .session-grid,
   .trust-grid,
   .boundary-columns {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .certificate-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -873,12 +883,10 @@ a:focus-visible {
   }
 
   .hero-text,
-  .intro-copy,
   .about p,
   .approach p,
   .book-copy p,
   .trust-profile-card p,
-  .story-copy p,
   .trust-boundaries p,
   .note-panel p {
     font-size: 1rem;
@@ -923,13 +931,6 @@ a:focus-visible {
 
   .concern-card h3 {
     font-size: 1.24rem;
-  }
-
-  .icon {
-    width: 36px;
-    height: 36px;
-    margin-bottom: 14px;
-    font-size: 1rem;
   }
 
   .about-portrait,

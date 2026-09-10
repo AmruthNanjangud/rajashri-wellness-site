@@ -29,6 +29,12 @@ $jobs = @(
     Rotate = 'Rotate270'
     Crop = [System.Drawing.Rectangle]::new(28, 24, 1140, 1530)
   }
+  [pscustomobject]@{
+    Source = 'WhatsApp Image 2026-09-06 at 5.11.38 PM.jpeg'
+    Output = 'certificate-inner-reset.jpg'
+    Rotate = 'None'
+    Crop = [System.Drawing.Rectangle]::new(0, 546, 720, 509)
+  }
 )
 
 $encoder = [System.Drawing.Imaging.ImageCodecInfo]::GetImageEncoders() |
